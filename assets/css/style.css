@@ -1,0 +1,112 @@
+/* تنظیمات کلی صفحه */
+body {
+    background-color: #ffffff !important; /* رنگ پایه سفید */
+
+    /* --- ترفند محو کردن درزها --- */
+    /* ما اینجا دو تا لایه پس‌زمینه روی هم می‌ندازیم:
+       لایه اول (رویی): یک رنگ سفید که ۸۰ درصد شفاف است (مثل یک پرده توری سفید).
+       لایه دوم (زیری): همون الگوی پنجه‌های خودمون.
+    */
+    background-image:
+            linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+            url('../images/pattern.png');
+
+    background-repeat: repeat;
+    background-size: 300px; /* سایز پترن */
+
+    /* نکته حرفه‌ای: این خط باعث میشه وقتی اسکرول می‌کنی، پترن ثابت بمونه */
+    /* این حرکت خیلی حس سایت رو مدرن می‌کنه و باعث میشه درزها کمتر دیده بشن */
+    background-attachment: fixed;
+
+    font-family: sans-serif;
+}
+
+/* رنگ منوی بالا */
+.navbar {
+    background-color: #ff6b6b; /* رنگ صورتی/قرمز */
+}
+
+/* لینک‌های سفید منو */
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: bold;
+}
+
+/* استایل کارت محصولات */
+.card {
+    transition: transform 0.3s; /* انیمیشن نرم */
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* سایه */
+}
+
+/* وقتی موس میره روی کارت */
+.card:hover {
+    transform: translateY(-5px); /* کمی بره بالا */
+}
+
+/* رنگ دکمه خرید */
+.btn-primary {
+    background-color: #ff9f43; /* نارنجی */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #f39c12; /* نارنجی پررنگ */
+}
+
+/* بخش هدر بزرگ (Hero) */
+.hero-section {
+    /* --- ترفند فید شدن --- */
+    /* ما اینجا دو تا لایه داریم:
+       1. یه گرادینت که از بالا (شفاف) شروع میشه و پایین (سفید) تموم میشه
+       2. عکس پس‌زمینه خودمون (bg.png)
+       ترتیب خیلی مهمه! گرادینت باید اول باشه.
+    */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 70%, #ffffff 100%),
+    url('../images/bg.png');
+
+    /* تنظیمات عکس */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    /* بقیه تنظیمات قبلی */
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+/* --- استایل‌های جدید برای صفحه اصلی --- */
+
+/* عنوان بخش‌ها */
+.section-title {
+    border-left: 5px solid #ff6b6b; /* خط رنگی کنار تیتر */
+    padding-left: 15px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+/* کارت دسته‌بندی */
+.category-card {
+    transition: 0.3s;
+    cursor: pointer;
+    border: 2px solid #eee;
+}
+
+.category-card:hover {
+    background-color: #ff6b6b !important; /* وقتی موس میره روش قرمز بشه */
+    border-color: #ff6b6b;
+    transform: scale(1.05); /* یکم بزرگ بشه */
+}
+
+.category-card:hover h5 {
+    color: white !important; /* متن سفید بشه */
+}
+
+/* عکس محصولات داخل کارت */
+.card-img-top {
+    height: 180px; /* عکس‌ها یک‌اندازه باشن */
+    object-fit: contain;
+}
