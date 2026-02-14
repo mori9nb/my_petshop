@@ -1,5 +1,6 @@
 <?php
 include 'includes/db.php';
+include 'includes/header.php';
 
 // --- بخش جدید: لاجیک حذف آیتم ---
 if(isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id'])) {
@@ -22,27 +23,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id'])) 
     exit();
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Your Cart 🛒</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.php">🐶 My Pet Shop</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
 <div class="container mt-5">
     <h2>Your Shopping Cart 🛍️</h2>
@@ -99,9 +79,10 @@ if(isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id'])) 
         </tbody>
     </table>
 
-    <div class="text-end">
-        <h3>To Pay: <span class="text-success">$<?php echo isset($total_price) ? $total_price : 0; ?></span></h3>
-        <button class="btn btn-success btn-lg mt-2">Checkout (Pay) 💳</button>
+    <div class="text-end mt-4">
+        <h3>Total Price: <span class="text-success">$<?php echo isset($total_price) ? $total_price : 0; ?></span></h3>
+
+        <a href="checkout.php" class="btn btn-success btn-lg mt-2 ms-2">Checkout (Pay) 💳</a>
     </div>
 
 </div>
